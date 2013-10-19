@@ -55,13 +55,18 @@
   </div><!-- /.navbar-collapse -->
 </nav>
 
-<div id="main"></div>
-<div id="scores"></div>
-
+<style>
+#main{
+	width: 640px;
+	height: 480px;
+	background: url(./images.jpg);
+}
+</style>
 
 </div>
 <div class="row">
-  <div class="col-md-12"><canvas id="game"></canvasid></div>
+  <div class="col-md-12">
+  <div id="main"><canvas id="game"></canvasid></div>
 </div>
 
 <script type="text/javascript" src="main.js"></script>
