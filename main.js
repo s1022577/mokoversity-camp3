@@ -22,15 +22,19 @@ var gameModule = (function () {
 
 		} else {
 
-				timeoutVar = setTimeout(start,1000)
+				timeoutVar = setTimeout(start,1000);
 				counter = counter + 1;
+		}
+	}
+		function gameOver(){
 
 				console.log("Counter:" + counter);
 			}			
-}
-    return{
+		
+
+    return {
     	start:start
     }		
 }) (); 
 
-gameModule.start();
+gameModule.start(); 
