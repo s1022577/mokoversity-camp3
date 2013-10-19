@@ -5,7 +5,6 @@ var canvas= document.getElementById('game'),
     ballY= Math.floor(Math.random() *500),
     ballZ= Math.floor(Math.random() *100);
 
-
 canvas.width= 480;
 canvas.height= 320;
 
@@ -14,4 +13,4 @@ ctx.beginPath();
 ctx.arc(ballX, ballY, ballZ,0, Math.PI *2, true);
 ctx.fill();
 
-}) ();
+}) (); 
