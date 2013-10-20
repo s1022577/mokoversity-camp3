@@ -1,6 +1,6 @@
 /*jslint browser: true, devel: true, closure: true */
 
-var gameModule = (function (document) {
+var gameModule = (function (document, $) {
 
     "use strict";
 
@@ -13,6 +13,11 @@ var gameModule = (function (document) {
         length = colors.length;
     function gameOver() {
         console.log("Final: " + scores);
+
+        // API: http://127.0.0.1:3000/scores?scores=500
+        var api = "http://127.0.0.1:3000/scores?scores=" + scores;
+
+        $.ajax({ url: api});
     }
 
     function startGame() {
@@ -30,12 +35,12 @@ var gameModule = (function (document) {
         ctx.arc(ballX, ballY, ballR, 0, Math.PI * 2, true);
         ctx.fill();
 
-        if (counter >= 10) {
+        if (counter >= 5) {
             gameOver();
 
         } else {
 
-            setTimeout(startGame, 2000);
+            setTimeout(startGame, 1000);
             counter = counter + 1;
         }
     }
@@ -59,5 +64,5 @@ var gameModule = (function (document) {
     return {
         start: start
     };
-}(document));
+}(document, $));
 gameModule.start();
